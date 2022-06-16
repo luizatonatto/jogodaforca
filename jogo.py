@@ -5,16 +5,15 @@ class bcolors:
     FAIL = '\033[91m' 
     RESET = '\033[0m' 
 
-print("***********")
+print("*******************************")
 print("*BEM-VINDO(A) AO JOGO DA FORCA*")
-print("***********")
+print("*******************************")
 
-desafiante = input("Digite o nome do desafiante: ")
-competidor = input("Digite o nome do competidor: ")
+desafiante = input("\nDigite o nome do desafiante: ")
+competidor = input("\nDigite o nome do competidor: ")
 limparTela()
 
-
-n = ["0","1"]
+n= [0,1]
 letras_escolhidas = [] 
 chances = 5
 tentativas = 0 
@@ -25,19 +24,20 @@ letras_validas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 palavra = input("Ao desafiante, digite sua palavra-chave para o jogo da Forca: ")
 palavras = list(palavra)
 letras = palavra
+
 if letras not in letras_validas:
     print("Esse caractere não é válido! Tente uma letra da próxima vez!")
 limparTela()
 
 def desafianteVencedor ():
     print("\nVocê,", desafiante, ",venceu o JOGO DA FORCA!")
-    print("O(A) competidor(a),", competidor, ",perdeu :(")
-    print("\nA palavra era:", palavra)
+    print("O(A) Competidor(a),", competidor, ",perdeu :(")
+    print(bcolors.OK + "\nA PALAVRA ERA:" + bcolors.RESET, palavra)
 
 def competidorVencedor ():
     print("Você,", competidor, ",venceu o JOGO DA FORCA!")
     print("O(A) Desafiante,", desafiante,",perdeu :(")
-    print("A palavra era:", palavra)
+    print (bcolors.OK + "\nA PALAVRA ERA:" + bcolors.RESET, palavra)
 
 arquivo = open ("jogo.forca", "w")
 arquivo.write (desafiante)
@@ -57,7 +57,6 @@ limparTela()
 estado_atual = len(palavra) * ["*"]
 print("Aqui é como está até agora: ", estado_atual)
 
-item = [] in estado_atual
 
 try:
     while True:
@@ -67,7 +66,7 @@ try:
         if jogar == "1":
             faltam = faltam - dica 
             dica = dica + 1
-            print ("A sua dica é: ", lista_Dicas2.pop(), "\nVocê já pediu", dica, "dica(s), agora restam", faltam, "dicas!")
+            print ("\nA sua dica é:",lista_Dicas2.pop(),"\nVocê já pediu", dica, "dica(s), agora restam", faltam, "dicas!")
             print("\nAgora você tem que chutar uma letra!")
             faltam = 2
             chute = input("Informe a letra que deseja arriscar: ")
@@ -76,47 +75,50 @@ try:
             if chute not in letras_validas:
                     print("Esse caractere não é válido! Tente uma letra da próxima vez")
 
-            if chute in palavra:
+            elif chute in palavra:
                 print( bcolors.OK + "Parabéns, você acertou a letra!" + bcolors.RESET)
                 for i in range(len(palavra)):
                         if chute == palavra[i]:
                             estado_atual[i] = chute
                             print("\nAqui é como está até agora: ", estado_atual)
-                            print("\nAqui são as letras que já foram: ",(letras_escolhidas))                           
-                            
+                            print("\nAqui são as letras que já foram: ",letras_escolhidas)
+                                                  
             else:
                     print(bcolors.FAIL + "\nQue pena! Essa letra não está na palavra" + bcolors.RESET) 
                     tentativas = tentativas + 1
                     restam = (chances - tentativas)
                     print("Você já errou", tentativas, "vez(es), lhe restam",restam,"tentativa(s).")
                     print("\nAqui é como está até agora: ", estado_atual)
-                    print("\nAqui são as letras que já foram: ",(letras_escolhidas))
+                    print("\nAqui são as letras que já foram: ",letras_escolhidas)
+                    
 
         elif jogar == "0":
             chute = input("Informe a letra que deseja arriscar: ")
             letras_escolhidas.append(chute.upper())
 
+
             if chute not in letras_validas:
                     print("Esse caractere não é válido! Tente uma letra da próxima vez!")
 
-            if chute in palavra:
+            elif chute in palavra:
                 print( bcolors.OK + "Parabéns, você acertou a letra!" + bcolors.RESET)
                 for i in range(len(palavra)):
                         if chute == palavra[i]:
                             estado_atual[i] = chute
-                            print("Aqui é como está até agora: ", estado_atual)
-                            print("\nAqui são as letras que já foram: ",(letras_escolhidas))                           
+                            print("\nAqui é como está até agora: ", estado_atual)
+                            print("\nAqui são as letras que já foram: ",letras_escolhidas)
                             
+
             else:
                     print(bcolors.FAIL + "\nQue pena! Essa letra não está na palavra" + bcolors.RESET) 
                     tentativas = tentativas + 1
                     restam = (chances - tentativas)
                     print("Você já fez", tentativas, "tentativa(s), lhe restam",restam,"tentativa(s).")
                     print("\nAqui é como está até agora: ", estado_atual)
-                    print("\nAqui são as letras que já foram: ",(letras_escolhidas))                   
+                    print("\nAqui são as letras que já foram: ",letras_escolhidas)
+                    
 
         if tentativas == 5:
-            print("O Jogador:",competidor,"perdeu! Nessa partida o vencedor é o(a) Desafiante:",desafiante)
             perdedor() 
             desafianteVencedor() 
             break
