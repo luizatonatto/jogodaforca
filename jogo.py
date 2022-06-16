@@ -30,7 +30,7 @@ if letras not in letras_validas:
 limparTela()
 
 def desafianteVencedor ():
-    print("Você,", desafiante, ",venceu o JOGO DA FORCA!")
+    print("\nVocê,", desafiante, ",venceu o JOGO DA FORCA!")
     print("O(A) competidor(a),", competidor, ",perdeu :(")
     print("\nA palavra era:", palavra)
 
@@ -82,8 +82,7 @@ try:
                         if chute == palavra[i]:
                             estado_atual[i] = chute
                             print("\nAqui é como está até agora: ", estado_atual)
-                            print("\nAqui são as letras que já foram: ",(letras_escolhidas))
-                            letras_escolhidas.append(chute.upper())
+                            print("\nAqui são as letras que já foram: ",(letras_escolhidas))                           
                             
             else:
                     print(bcolors.FAIL + "\nQue pena! Essa letra não está na palavra" + bcolors.RESET) 
@@ -92,7 +91,6 @@ try:
                     print("Você já errou", tentativas, "vez(es), lhe restam",restam,"tentativa(s).")
                     print("\nAqui é como está até agora: ", estado_atual)
                     print("\nAqui são as letras que já foram: ",(letras_escolhidas))
-                    letras_escolhidas.append(chute.upper())
 
         elif jogar == 0:
             chute = input("Informe a letra que deseja arriscar: ")
@@ -107,8 +105,7 @@ try:
                         if chute == palavra[i]:
                             estado_atual[i] = chute
                             print("Aqui é como está até agora: ", estado_atual)
-                            print("\nAqui são as letras que já foram: ",(letras_escolhidas))
-                            letras_escolhidas.append(chute.upper())
+                            print("\nAqui são as letras que já foram: ",(letras_escolhidas))                           
                             
             else:
                     print(bcolors.FAIL + "\nQue pena! Essa letra não está na palavra" + bcolors.RESET) 
@@ -116,8 +113,7 @@ try:
                     restam = (chances - tentativas)
                     print("Você já fez", tentativas, "tentativa(s), lhe restam",restam,"tentativa(s).")
                     print("\nAqui é como está até agora: ", estado_atual)
-                    print("\nAqui são as letras que já foram: ",(letras_escolhidas))
-                    letras_escolhidas.append(chute.upper())
+                    print("\nAqui são as letras que já foram: ",(letras_escolhidas))                   
 
         if tentativas == 5:
             print("O Jogador:",competidor,"perdeu! Nessa partida o vencedor é o(a) Desafiante:",desafiante)
