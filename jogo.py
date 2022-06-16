@@ -61,10 +61,10 @@ item = [] in estado_atual
 
 try:
     while True:
-        jogar = int(input("\nVocê deseja Jogar [0] ou Solicitar uma dica [1]? "))
+        jogar = input("\nVocê deseja Jogar [0] ou Solicitar uma dica [1]? ")
         limparTela()
 
-        if jogar == 1:
+        if jogar == "1":
             faltam = faltam - dica 
             dica = dica + 1
             print ("A sua dica é: ", lista_Dicas2.pop(), "\nVocê já pediu", dica, "dica(s), agora restam", faltam, "dicas!")
@@ -92,7 +92,7 @@ try:
                     print("\nAqui é como está até agora: ", estado_atual)
                     print("\nAqui são as letras que já foram: ",(letras_escolhidas))
 
-        elif jogar == 0:
+        elif jogar == "0":
             chute = input("Informe a letra que deseja arriscar: ")
             letras_escolhidas.append(chute.upper())
 
