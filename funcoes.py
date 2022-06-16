@@ -25,17 +25,17 @@ def dicas():
     return lista_dica
 
 def vencedor(): 
-    print("            ___         ")
-    print("         '.=====.'      ")
-    print("      .-\\:      /-.    ")
+    print("           ___         ")
+    print("        '.=====.'       ")
+    print("     .-\\:      /-.     ")
     print("     | (|:.     |) |    ")
     print("      '-|:.     |-'     ")
-    print("        \\::.    /      ")
+    print("        \::.    /       ")
     print("         '::. .'        ")
     print("           ) (          ")
-    print("         .' '.          ")
+    print("          .' '.         ")
     print("        '-------'       ") 
-    print("         VENCEDOR       ")
+    print("        VENCEDOR        ")
     print("                        ")
 
 def perdedor():
@@ -47,17 +47,17 @@ def perdedor():
  print("          :      `-.                               ")
  print("      /    ';        `.                            ")
  print("     /      .'         `.                          ")
- print("    |     (      `.     `-.._                      ")
- print("           ` ` `.          `-.._                   ")
+ print("     |     (      `.     `-.._                     ")
+ print("              ` ` `.          `-.._                ")
  print("        `.   ;`-.._ `-`..-. `-.   `-._             ")
  print("         `..'     `-.```.  `-._ `-.._.'            ")
  print("             `--....-`--'      `-.,'               ")
  print("                ._)/                               ")
  print("               /--(                                ")
  print("           -./,--'`-,                              ")
- print("         ,^--(                     você perdeu :)' ")
+ print("         ,^--(                   você perdeu :)'   ")
  print("         ,--' `-,                                  ") 
-print("                                                    ")
+ print("                                                   ")
 
 
 
